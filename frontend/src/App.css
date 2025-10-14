@@ -1,0 +1,88 @@
+/* app.css */
+
+/* ===== Tabla ===== */
+.table-responsive {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* azul suave al pasar el mouse */
+  transition: background-color 0.3s ease;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa;
+}
+
+/* ===== Botones ===== */
+.btn-sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn i {
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+/* Cambiar color al pasar el mouse */
+.btn-outline-danger:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-warning:hover {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+/* ===== Alertas ===== */
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+  min-width: 250px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+  opacity: 0.95;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Modal ===== */
+.modal-content {
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* ===== Inputs y búsqueda ===== */
+.form-control {
+  border-radius: 0.25rem;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: #80bdff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .table-responsive {
+    padding: 0.5rem;
+  }
+
+  .btn i {
+    margin-right: 0.2rem;
+  }
+}
