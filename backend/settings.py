@@ -11,9 +11,6 @@ from decouple import config
 # 📁 Rutas base
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# 🚨 Seguridad
-SECRET_KEY = config('SECRET_KEY', default='clave-insegura-en-desarrollo')
-DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']  # Puedes reemplazar * por tu dominio Railway o Netlify
 
