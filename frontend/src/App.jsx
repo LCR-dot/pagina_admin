@@ -5,6 +5,8 @@ import SearchBar from "./components/SearchBar";
 import CityTable from "./components/CityTable";
 import CityForm from "./components/CityForm";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+
 function App() {
   const [cities, setCities] = useState([]);
   const [search, setSearch] = useState("");
@@ -12,7 +14,7 @@ function App() {
   const [showForm, setShowForm] = useState(false);
 
   const fetchCities = async () => {
-    const res = await axios.get("http://127.0.0.1:8000/api/cities/");
+    const res = await axios.get(`${API_URL}/cities/`);
     setCities(res.data);
   };
 
@@ -29,15 +31,15 @@ function App() {
   };
 
   const handleDelete = async (id) => { 
-    await axios.delete(`http://127.0.0.1:8000/api/cities/${id}/`); 
+    await axios.delete(`${API_URL}/cities/${id}/`); 
     fetchCities(); 
   };
 
   const handleSave = async (city) => {
     if (city.id) {
-      await axios.put(`http://127.0.0.1:8000/api/cities/${city.id}/`, city);
+      await axios.put(`${API_URL}/cities/${city.id}/`, city);
     } else {
-      await axios.post("http://127.0.0.1:8000/api/cities/", city);
+      await axios.post(`${API_URL}/cities/`, city);
     }
     setShowForm(false);
     fetchCities();
