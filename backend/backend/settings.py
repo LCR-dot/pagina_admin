@@ -1,18 +1,21 @@
 """
 Django settings for backend project.
-
 Actualizado para despliegue en Railway con base de datos MySQL.
 """
 
 import os
 from pathlib import Path
-from decouple import config
+from decouple import config  # asegúrate de tener instalado python-decouple
 
 # 📁 Rutas base
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# ⚙️ Configuración general
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-@x1c3_7t^qz8f!b2#j%gk4$w9r+6s(m)z0d=l&nup5h*v!r')
 
-ALLOWED_HOSTS = ['*']  # Puedes reemplazar * por tu dominio Railway o Netlify
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+ALLOWED_HOSTS = ['*']  # o tu dominio Railway, ej: 'paginaadmin-production.up.railway.app'
 
 # 📦 Aplicaciones instaladas
 INSTALLED_APPS = [
