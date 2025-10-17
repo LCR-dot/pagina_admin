@@ -1,11 +1,10 @@
+// src/App.jsx
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import CityTable from "./components/CityTable";
 import CityForm from "./components/CityForm";
-
-const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
+import api from "./api"; // importamos nuestra instancia de Axios
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -14,8 +13,12 @@ function App() {
   const [showForm, setShowForm] = useState(false);
 
   const fetchCities = async () => {
-    const res = await axios.get(`${API_URL}/cities/`);
-    setCities(res.data);
+    try {
+      const res = await api.get("/cities/");
+      setCities(res.data);
+    } catch (error) {
+      console.error("Error al obtener ciudades:", error);
+    }
   };
 
   useEffect(() => { fetchCities(); }, []);
@@ -31,18 +34,26 @@ function App() {
   };
 
   const handleDelete = async (id) => { 
-    await axios.delete(`${API_URL}/cities/${id}/`); 
-    fetchCities(); 
+    try {
+      await api.delete(`/cities/${id}/`);
+      fetchCities();
+    } catch (error) {
+      console.error("Error al eliminar ciudad:", error);
+    }
   };
 
   const handleSave = async (city) => {
-    if (city.id) {
-      await axios.put(`${API_URL}/cities/${city.id}/`, city);
-    } else {
-      await axios.post(`${API_URL}/cities/`, city);
+    try {
+      if (city.id) {
+        await api.put(`/cities/${city.id}/`, city);
+      } else {
+        await api.post("/cities/", city);
+      }
+      setShowForm(false);
+      fetchCities();
+    } catch (error) {
+      console.error("Error al guardar ciudad:", error);
     }
-    setShowForm(false);
-    fetchCities();
   };
 
   const handleCancel = () => setShowForm(false);
