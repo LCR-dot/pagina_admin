@@ -71,7 +71,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config('MYSQLDATABASE', default='railway'),
         'USER': config('MYSQLUSER', default='root'),
-        'PASSWORD': config('MYSQLPASSWORD', default='zGfBfgaEwbwZUKoDENizQNOzEgbScbsA'),
+        'PASSWORD': config('MYSQLPASSWORD', default='BBzEgOxtTUagWVXYXZcvetGdIUgvKxPX'),
         'HOST': config('MYSQLHOST', default='mysql.railway.internal'),
         'PORT': config('MYSQLPORT', default='3306'),
         'OPTIONS': {
