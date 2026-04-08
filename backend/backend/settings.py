@@ -72,7 +72,7 @@ DATABASES = {
         'NAME': config('MYSQLDATABASE', default='railway'),
         'USER': config('MYSQLUSER', default='root'),
         'PASSWORD': config('MYSQLPASSWORD', default='zGfBfgaEwbwZUKoDENizQNOzEgbScbsA'),
-        'HOST': config('MYSQLHOST', default='railway.internal'),
+        'HOST': config('MYSQLHOST', default='mysql.railway.internal'),
         'PORT': config('MYSQLPORT', default='3306'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
