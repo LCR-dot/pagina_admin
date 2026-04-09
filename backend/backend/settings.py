@@ -74,12 +74,12 @@ DATABASES = {
         'PASSWORD': config('MYSQLPASSWORD', default='BBzEgOxtTUagWVXYXZcvetGdIUgvKxPX'),
         'HOST': config('MYSQLHOST', default='mysql.railway.internal'),
         'PORT': config('MYSQLPORT', default='3306'),
+        #'URL': config('MYSQL_URL', default='mysql://root:BBzEgOxtTUagWVXYXZcvetGdIUgvKxPX@mysql.railway.internal:3306/railway'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         },
     }
 }
-
 # 🔑 Validadores de contraseñas
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
