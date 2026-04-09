@@ -69,17 +69,18 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('MYSQLDATABASE', default='railway'),
-        'USER': config('MYSQLUSER', default='root'),
-        'PASSWORD': config('MYSQLPASSWORD', default='BBzEgOxtTUagWVXYXZcvetGdIUgvKxPX'),
-        'HOST': config('MYSQLHOST', default='mysql.railway.internal'),
-        'PORT': config('MYSQLPORT', default='3306'),
-        'URL': config('MYSQL_URL', default='mysql://root:BBzEgOxtTUagWVXYXZcvetGdIUgvKxPX@mysql.railway.internal:3306/railway'),
+        'NAME': os.environ.get('MYSQLDATABASE'),
+        'USER': os.environ.get('MYSQLUSER'),
+        'PASSWORD': os.environ.get('MYSQLPASSWORD'),
+        'HOST': os.environ.get('MYSQLHOST'),  # 🔥 PRIVATE (correcto en Railway)
+        'PORT': os.environ.get('MYSQLPORT'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         },
     }
 }
+
+
 # 🔑 Validadores de contraseñas
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
