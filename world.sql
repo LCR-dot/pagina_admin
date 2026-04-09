@@ -418,30 +418,6 @@ LOCK TABLES `gestion_city` WRITE;
 INSERT INTO `gestion_city` VALUES (15,'cderfv','123','asdsds',23423432),(17,'cccccc','aaa','wedwdfesf',333333),(18,'abcf','123','wewerew',23443),(19,'qqqqq','qwe','qwewqewe',122222),(21,'Prueba 2','123','oooo',2000);
 /*!40000 ALTER TABLE `gestion_city` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `prueba`
---
-
-DROP TABLE IF EXISTS `prueba`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `prueba` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `edad` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `prueba`
---
-
-LOCK TABLES `prueba` WRITE;
-/*!40000 ALTER TABLE `prueba` DISABLE KEYS */;
-/*!40000 ALTER TABLE `prueba` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -452,4 +428,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-04-08 21:36:22
+-- Dump completed on 2025-10-17 10:39:26
